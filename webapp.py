@@ -3,15 +3,14 @@ from flask import render_template
 
 app = Flask(__name__)
 
-app.debug = True #Change this to False for production
+app.debug = False #Change this to False for production
 
 @app.route('/')
 def home():
     return render_template('home.html')
-
 @app.route('/content')
 def content():
-    return render_template('content.html')
+    return Markup("<h2>Hey everyone!</h2><p>Here is the new content!</p>")
 
 if __name__ == '__main__':
     app.run()
